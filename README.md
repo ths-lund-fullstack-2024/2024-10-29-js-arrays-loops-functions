@@ -97,23 +97,109 @@ const colors = ["Red", "Green", "Blue", "Orange"];
 console.log(colors.at(0)); // Red
 ```
 
-The nice thing about the `at()` method is that it accepts negative values, and if you give it a negative value, it will start "counting" from the end of the array. So -1 would be the last element in the array. This is similar to the way python works. Just FYI. 
+The nice thing about the `at()` method is that it accepts negative values, and if you give it a negative value, it will start "counting" from the end of the array. So -1 would be the last element in the array. This is similar to the way python works. Just FYI.
 
 ```js
 console.log(colors.at(-1)); // Orange
 ```
 
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
 ### Modifying elements in Arrays
 
-index, with
+In order to edit an element we need to know its index position and the we can just use square bracket in order to access it and modify it. We modify it by assigning a new value to it.
+
+```js
+const colors = ["Red", "Green", "Blue", "Orange"];
+colors[0] = "Yellow";
+console.log(colors);
+
+colors[2] = "Brown";
+console.log(colors);
+```
+
+We can also update an element of an array with `with()`. The difference here is that this method takes two parameters. The first one is the index position of the element we want to change. The second one is the new value that we would like to give that element. Then a copy of array is returned to us with the modifications.
+
+```js
+const colors = ["Red", "Green", "Blue", "Orange"];
+
+const updatedColors = colors.with(1, "pink");
+
+console.log(colors);
+console.log(updatedColors);
+```
 
 ### Properties of Arrays
 
+Properites are just fixed values, in our case the property we are interested in is the `.length`-property. This property gives us the length, as a number, of the array to us. If we have five elements in an array, the value of lenght will be 5.
+
+```js
+const colors = ["Red", "Green", "Blue", "Orange"];
+
+const length = colors.length; // Here we just save the value to a variable. We don't have to do this.
+
+console.log(length); // 4
+console.log(colors.length); // 4
+```
+
+So if we add or remove elements of the array, this value will updated accordingly.
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
 ### Static Methods
+
+Let's skip this for now. I will add content here later.
 
 ### Array Methods
 
-push, pop, unshift, shift, includes, indexOf, join, splice, slice
+A method is just a set of instructions that are predfined and bundle inside a method. These instructions are usually very common and instead of us writing the same code over and over, JS has created these methods for us to use whenever we want to.
+
+#### push(item1, item2, item...) => new lenght of array
+
+Is used to add an element to the end of an existing array. It takes one or more parameters, and theses parameters are the new elements to be added. It also returns something, and that something is the new lenght of the array.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// Let's push a 9 to the end.
+numbers.push(9);
+
+// Let's push 10 and 11
+numbers.push(10, 11);
+
+// push 12 and save the new lenght in a variable
+const newLength = numbers.push(12);
+console.log(newLength); // 12
+```
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### pop( ) => the removed element
+
+Is used to remove the last element of an array. The element that was removed is also returned by the method.
+
+```js
+const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+// Remove the last element and ignore the return value.
+cities.pop();
+console.log(cities);
+```
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### unshift(item1, item2, item..) => new lenght of array
+
+Is used to add an element to the beginning of the array instead of the end. It also returs the new length of the array as a number.
+
+```js
+const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+cities.unshift("Linköping");
+console.log(cities);
+```
+
+shift, includes, indexOf, join, splice, slice
 
 ## Loops
 
