@@ -53,7 +53,38 @@
 
 // ########## unshift() ########## //
 
-const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
 
-cities.unshift("Linköping");
-console.log(cities);
+// cities.unshift("Linköping");
+// console.log(cities);
+
+// ########## shift() ########## //
+
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+// cities.shift();
+// console.log(cities); //["Göteborg", "Malmö", "Lund"];
+
+// ########## includes() ########## //
+
+// const numbers = [2, 4, 8, 10];
+
+// if (numbers.includes(6)) {
+//   console.log("The number 6 exists in the array");
+// } else {
+//   console.log("There is no number 6 in the array");
+// }
+
+// ########## indexOf() ########## //
+
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+// const indexOfMalmo = cities.indexOf("Malmö");
+// console.log(cities);
+// console.log(indexOfMalmo);
+
+// ########## join() ########## //
+
+const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+const citiesAsString = cities.join();
+console.log(citiesAsString);

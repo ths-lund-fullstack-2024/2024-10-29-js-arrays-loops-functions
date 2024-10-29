@@ -199,7 +199,108 @@ cities.unshift("Linköping");
 console.log(cities);
 ```
 
-shift, includes, indexOf, join, splice, slice
+#### shift() => the removed element
+
+Is used to remove an element from the beginning of an array and returns that removed element.
+
+```js
+const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+cities.shift();
+console.log(cities); //["Göteborg", "Malmö", "Lund"];
+```
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### includes(item) => boolean
+
+Is used to check of an item/element exists in a array or not. The parameter is the item/element we are looking for and the return value either true or false.
+
+```js
+const numbers = [2, 4, 6, 8, 10];
+
+if (numbers.includes(6)) {
+  console.log("The number 6 exists in the array");
+} else {
+  console.log("There is no number 6 in the array");
+}
+
+const number8Exists = numbers.include(8);
+
+if (number8Exists) {
+  // Do something if the number 8 exists.
+}
+```
+
+If you have more complex conditions in your if checks, always try to store them in variabels with readable names instead. It makes the code more readably and maintainable.
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### indexOf(item) => the index position OR -1 if it doesn't exist.
+
+Is used to find an index position of a specific item/element inside the array. If it exists, the index is returned as a number, and if it doesn't, negative one `-1` is returned. Keep that in mind when using it in if checks.
+
+```js
+const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+const indexOfMalmo = cities.indexOf("Malmö");
+console.log(cities);
+console.log(indexOfMalmo);
+```
+
+If we try get an index of an item that doesn't exist, will get back `-1`.
+
+```js
+const indexOfSkurup = cities.indexOf("Skurup");
+console.log(indexOfSkurup); // -1
+```
+
+Remember, if you use this in if check, check for `-1` if you want to do something it the item doesn't exist in the array.
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### join(separator?) => a string including all the elements
+
+Is used to convert and array of elements to a string containing those elements. It doesn't matter if it's numbers, strings or something else, the method always tries to convert everything to a long string. It also takes a parameter that is a character that will be used to separate the elements with. Can be an empty space, dash, underscore or any other character. The separator is optional, hence the question mark in in the syntax.
+
+Consider this example:
+
+```js
+const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+const citiesAsString = cities.join();
+```
+
+If we don't specify a seperator, per default every element will be separated with a comma.
+
+```js
+console.log(citiesAsString); // "Stockholm,Göteborg,Malmö,Lund"
+```
+
+This is alright, but maybe we want an empty space instead between the elements.
+
+```js
+const citiesAsString = cities.join(" ");
+console.log(citiesAsString); // "Stockholm Göteborg Malmö Lund"
+```
+
+In short, join converts an array to a string and separates every element with a separator, that is defined in the parameter.
+
+Or to understand it my name: We **join** the elements in an array to a string.
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### splice(start, deleteCount, item1?, item2?, item?...)
+
+The splice method lets us modify the content of an array on any given index position. 
+
+It takes several parameters. The first one is the index on which we would like to start our modification. 
+
+The next one is the delete count, how many elements do we want to delete? If we don't want to delete anything, we just assign 0 to this parameter. If we delete something, it will start deleting from the `start` parameters, in other words, the index position we assign to `start`.
+
+The third one (or more) is the new items/elements we would like to add to the array.
+
+splice, slice
 
 ## Loops
 
