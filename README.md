@@ -290,29 +290,149 @@ Or to understand it my name: We **join** the elements in an array to a string.
 
 [Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
 
-#### splice(start, deleteCount, item1?, item2?, item?...)
+#### splice(start, deleteCount, item1?, item2?, item?...) => an array of the removed elements
 
-The splice method lets us modify the content of an array on any given index position. 
+The splice method lets us modify the content of an array on any given index position.
 
-It takes several parameters. The first one is the index on which we would like to start our modification. 
+It takes several parameters. The first one is the index on which we would like to start our modification.
 
 The next one is the delete count, how many elements do we want to delete? If we don't want to delete anything, we just assign 0 to this parameter. If we delete something, it will start deleting from the `start` parameters, in other words, the index position we assign to `start`.
 
 The third one (or more) is the new items/elements we would like to add to the array.
 
-splice, slice
+The return value of the method is a new array containing the removed elements. If no elements were removed, the return value is an empty array.
+
+Let's do an example:
+
+```js
+const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+```
+
+First thing, let's remove Denmark from the array.
+
+```js
+countries.splice(1, 1);
+console.log(countries); // ["Sweden", "Finland", "Norway", "Iceland"];
+```
+
+If we want to remove more elements, that can work as well, but they have to be next to each other. Let's say we want to remove Norway and Iceland from the array.
+
+```js
+const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+
+countries.splice(3, 2);
+console.log(countries); // ['Sweden', 'Denmark', 'Finland']
+```
+
+Another usage is when we want to replace an element inside the array with another. First we need the index position on where to start the replacement, then define how many to remove, in our case 1 if we just want to replace. And then we need to specify the item/element to add.
+
+Let's replace Norway with Germany:
+
+```js
+const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+
+countries.splice(3, 1, "Germany");
+
+console.log(countries); //["Sweden", "Denmark", "Finland", "Germany", "Iceland"];
+```
+
+So if we add elements inside the array, the additions always starts from the index position defined as the "start"-parameter. That means all elements that come after, they will just be shifted to the "right", they get new index positions.
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
+#### slice()
+
+We will cover this later maybe.
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
 
 ## Loops
 
 ### While Loop
 
+The while loop is useful when you don’t know the exact number of times you need to repeat an action in advance. It continues looping as long as a given condition remains true.
+
+Syntax:
+
+```js
+while (condition) {
+  // Code to run each iteration
+}
+```
+
+Let's do a counter. Let's increment the variabel `count` till it gets to 100. Then we break the loop.
+
+```js
+let count = 0;
+
+while (count < 100) {
+  count++;
+  // count = count + 1; // This is equal to above
+  console.log(count);
+}
+
+console.log(`The count is now ${count} after the loop canceled.`);
+```
+
+In conclusion, the while loop runs until the condition is evaluated as false. So be careful to specify conditions that will never be false.
+
+We can cancel the loop manually as well by using the `break` keyword. It goes like this:
+
+```js
+let count = 0;
+
+while (count < 100) {
+  count++;
+  // count = count + 1; // This is equal to above
+  console.log(count);
+
+  if (count == 47) {
+    console.log("The count is now 47 and that's enough!");
+    break;
+  }
+}
+
+console.log(`The count is now ${count} after the loop canceled.`);
+```
+
+Remember, the while loop always checks the condition BEFORE it runs its first iteration. If the condition is false, the loop will be ignored!
+
+[Back to top](#2024-10-29-javascript---arrays-loops-and-functions)
+
 ### Do-while Loop
+
+The do-while loop is similar to while, but it always runs at least once because it checks the condition after running the loop body.
+
+Syntax:
+
+```js
+do {
+  // Code to be run each iteration
+} while (condition);
+```
+
+Let's do the same example with the count, but set the condition to `count === 0`. This means the condition is true straight away but since it's a do-while, it will run atleast once and update the value so it's not 0 anymore. If we hadn't updated the value, this would have been a infinite loop.
+
+```js
+let count = 0;
+
+do {
+  count++;
+  console.log(count);
+} while (count === 0);
+```
 
 ### For-loop with index
 
+The classic for loop is often used when you know in advance how many times you want to repeat an action, especially when working with lists or arrays.
+
 ### For..of-loop
 
+The for-of loop is specifically for iterating over items in an iterable object (like an array). It’s useful when you only need each item, not the index.
+
 ### For..in-loop
+
+The for-in loop is useful for iterating over keys (or properties) in an object. It’s not generally used for arrays (as it returns indexes as strings), but it’s great for objects.
 
 ## Functions
 

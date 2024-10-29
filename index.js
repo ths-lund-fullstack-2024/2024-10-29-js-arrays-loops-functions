@@ -85,6 +85,61 @@
 
 // ########## join() ########## //
 
-const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
-const citiesAsString = cities.join();
-console.log(citiesAsString);
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+// const citiesAsString = cities.join();
+// console.log(citiesAsString);
+
+// ########## splice() ########## //
+
+// remove Denmark
+// const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+// countries.splice(1, 1);
+// console.log(countries); // ["Sweden", "Finland", "Norway", "Iceland"];
+
+// remove Denmark and Finland
+
+// countries.splice(1, 2);
+// console.log(countries); // ["Sweden", "Norway", "Iceland"];
+
+// replace Norway with Germany
+
+// const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+// countries.splice(3, 1, "Germany");
+// console.log(countries); // ["Sweden", "Denmark", "Finland", "Germany", "Iceland"];
+
+// ########## while loop ########## //
+
+// let count = 0;
+
+// while (count < 100) {
+//   count++;
+//   // count = count + 1; // This is equal to above
+//   console.log(count);
+// }
+
+// console.log(`The count is now ${count} after the loop canceled.`);
+
+// with break
+// let count = 120;
+
+// while (count < 100) {
+//   count++;
+//   // count = count + 1; // This is equal to above
+//   console.log(count);
+
+//   if (count == 47) {
+//     console.log("The count is now 47 and that's enough!");
+//     break;
+//   }
+// }
+
+// console.log(`The count is now ${count} after the loop canceled.`);
+
+// ########## do-while loop ########## //
+
+let count = 0;
+
+do {
+  count++;
+  console.log(count);
+} while (count === 0);
