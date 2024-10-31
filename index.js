@@ -137,9 +137,17 @@
 
 // ########## do-while loop ########## //
 
-let count = 0;
+// let count = 0;
 
-do {
-  count++;
-  console.log(count);
-} while (count === 0);
+// do {
+//   count++;
+//   console.log(count);
+// } while (count === 0);
+
+// ########## for loop with index ########## //
+
+const numbers = [5, 2, 10, 15, 27, 99];
+
+for (let i = numbers.length -1; i >= 0; i--) {
+  console.log(numbers[i]);
+}

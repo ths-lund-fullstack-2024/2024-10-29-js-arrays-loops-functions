@@ -386,7 +386,7 @@ while (count < 100) {
   // count = count + 1; // This is equal to above
   console.log(count);
 
-  if (count == 47) {
+  if (count === 47) {
     console.log("The count is now 47 and that's enough!");
     break;
   }
@@ -411,7 +411,7 @@ do {
 } while (condition);
 ```
 
-Let's do the same example with the count, but set the condition to `count === 0`. This means the condition is true straight away but since it's a do-while, it will run atleast once and update the value so it's not 0 anymore. If we hadn't updated the value, this would have been a infinite loop.
+Let's do the same example with the count, but set the condition to `count !== 0`. This means the condition is false straight away but since it's a do-while, it will run atleast once and update the value so it's not 0 anymore.
 
 ```js
 let count = 0;
@@ -419,12 +419,48 @@ let count = 0;
 do {
   count++;
   console.log(count);
-} while (count === 0);
+} while (count !== 0);
 ```
 
 ### For-loop with index
 
 The classic for loop is often used when you know in advance how many times you want to repeat an action, especially when working with lists or arrays.
+
+Syntax:
+
+```js
+for (initialValue; condition; change) {
+  // Code to be executed in each iteration.
+}
+```
+
+Let's take an example with an arrys of numbers. We just want to console.log each item/element inside the array.
+
+```js
+const numbers = [5, 2, 10, 15, 27, 99];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+```
+
+The `initialValue` is the value of the index we will start looping on. In the case above, we start looping on index position 0, in other words, the first item/element in the array.
+
+The `condition` in this case is the `length` attribute of the array. It will always be equal to the numbers of items/elements in the array. It's good to use value instead of hard coding one, since we might not know how many items/elements there are inside the array.
+
+The `change` is just how we update the index value after each iteration. Usually we just increment it but we can do it in other ways as well.
+
+Let's try the opposite of the example, instead of going left to right, we can go right to left.
+
+```js
+const numbers = [5, 2, 10, 15, 27, 99];
+
+for (let i = numbers.length - 1; i >= 0; i--) {
+  console.log(numbers[i]);
+}
+```
+
+The reason for the `-1` inside the initialValue is because the length attribute just counts the total amount of items/elements. Which means that the length value will always be one more than the total number of index positions, since index position starts at 0.
 
 ### For..of-loop
 
