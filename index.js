@@ -146,8 +146,28 @@
 
 // ########## for loop with index ########## //
 
-const numbers = [5, 2, 10, 15, 27, 99];
+// const numbers = [5, 2, 10, 15, 27, 99];
 
-for (let i = numbers.length -1; i >= 0; i--) {
-  console.log(numbers[i]);
+// for (let i = numbers.length -1; i >= 0; i--) {
+//   console.log(numbers[i]);
+// }
+
+// ########## for..of loop ########## //
+// const cars = ["Volvo", "Saab", "Volkswagen", "BMW"];
+
+// for (const car of cars) {
+//   console.log(car);
+// }
+
+// ########## functions ########## //
+function greeting() {
+  console.log("Hello there!");
 }
+
+const greeting = function () {
+  console.log("Hello there!");
+};
+
+const greeting = () => {
+  console.log("Hello there!");
+};

@@ -466,13 +466,104 @@ The reason for the `-1` inside the initialValue is because the length attribute 
 
 The for-of loop is specifically for iterating over items in an iterable object (like an array). It’s useful when you only need each item, not the index.
 
+Syntax:
+
+```js
+for (variabel of array) {
+  // Code to be executed in each interation
+}
+```
+
+Example with car names, just log the car to the console.
+
+```js
+const cars = ["Volvo", "Saab", "Volkswagen", "BMW"];
+
+for (const car of cars) {
+  console.log(car);
+}
+```
+
+The `variable` is a local variable that is created and re-created in each iteration and always has the value of the element that is being iterated over.
+
 ### For..in-loop
 
 The for-in loop is useful for iterating over keys (or properties) in an object. It’s not generally used for arrays (as it returns indexes as strings), but it’s great for objects.
 
 ## Functions
 
+A function is basically a small (or larger) piece of code that has been packaged to a entity that can be reused across your application as many times as you would like.
+
 ### Create functions
+
+There are three "ways" to create functions in JS. Two of them are kind of similar but one of them is more different.
+
+#### with the function keyword
+
+```js
+function functionName(/* zero or more params */) {
+  // The code to be executed.
+
+  // zero or ONE return value
+  return something;
+}
+```
+
+Let's try a greeting function
+
+```js
+function greeting() {
+  console.log("Hello there!");
+}
+```
+
+A breakdown:
+
+- `function`: reserved keyword in JS, used to tell JS that a function is to be defined.
+
+- `functionName`: just the name of the function, pick a name that describes the function.
+
+- `parameters`: also called "arguments" sometimes, they are the data that the function needs in order to work. We can define zero or more of those.
+
+- `return value`: the values that is being returned from the fuction. You don't have to have a return value, it's totally fine for the functions to just run some code. But remember, you can only have ONE return value. If we don't defined a return value, the browser will do that for us and return `undefined`.
+
+#### with a variabel and the function key word.
+
+```js
+const functionName = function (/* zero or more params */) {
+  // The code to be executed.
+
+  // zero or ONE return value
+  return something;
+};
+```
+
+Same example as above:
+
+```js
+const greeting = function () {
+  console.log("Hello there!");
+};
+```
+
+#### with an arrow function
+
+```js
+const functionName = (/* zero or more params */) => {
+  // The code to be executed.
+
+  // zero or ONE return value
+  return something;
+};
+```
+
+Same example again:
+
+```js
+const greeting = () => {
+  console.log("Hello there!");
+};
+```
 
 ### Functions with parameters
 
