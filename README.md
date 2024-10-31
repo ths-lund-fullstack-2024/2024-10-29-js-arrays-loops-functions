@@ -565,8 +565,62 @@ const greeting = () => {
 };
 ```
 
+#### Key differences between them
+
+| Feature                         | Function Declaration               | Function Expression                | Arrow Function                        |
+| ------------------------------- | ---------------------------------- | ---------------------------------- | ------------------------------------- |
+| **Syntax**                      | `function name() { ... }`          | `const name = function() { ... }`  | `const name = () => { ... }`          |
+| **Hoisting**                    | Hoisted to the top of the scope    | Not hoisted                        | Not hoisted                           |
+| **`this` Binding**              | Dynamic (`this` depends on caller) | Dynamic (`this` depends on caller) | Lexical (`this` from outer scope)     |
+| **Usage of `arguments` Object** | Yes                                | Yes                                | No                                    |
+| **Can be Named**                | Yes                                | Optional                           | No                                    |
+| **Common Use Cases**            | General-purpose function           | Assigning functions as variables   | Short, concise functions or callbacks |
+| **Syntax Simplicity**           | Longer                             | Longer                             | Shorter and simpler                   |
+| **Return Statement (1-liner)**  | Requires `return`                  | Requires `return`                  | Implicit `return` if one-liner        |
+
 ### Functions with parameters
+
+```js
+function greetWithName(name) {
+  console.log("Hello " + name + "!");
+
+  // Below is equal to above. This is called a template literal string. We can inject variables in to the string.
+  console.log(`Hello ${name}!`);
+}
+```
+
+The above was a simple one with a string as parameters. Even if we pass in a number, JS manages to convert that number to a string and execute the code.
+
+Let's take an example of a calculation.
+
+```js
+function addTwoNumbers(num1, num2) {
+  const result = num1 + num2;
+  console.log(`The result is ${result}`);
+}
+```
 
 ### Functions with return value
 
+```js
+function giveMeTheNumber7() {
+  return 7;
+}
+
+const number = giveMeTheNumber7();
+```
+
+Here the functions returns a specific number. It means we can create a variable that is equal to the function, that will assign the return value of the function to the variable that we have created.
+
 ### Function with both
+
+Here we have a function with both parameters and return value.
+
+```js
+function divide(num1, num2) {
+  const result = num1 / num2;
+  return result;
+}
+
+const result = divide(10, 2);
+```

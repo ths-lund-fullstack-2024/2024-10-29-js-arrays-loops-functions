@@ -160,14 +160,50 @@
 // }
 
 // ########## functions ########## //
-function greeting() {
-  console.log("Hello there!");
+// function greeting() {
+//   console.log("Hello there!");
+// }
+
+// const greeting = function () {
+//   console.log("Hello there!");
+// };
+
+// const greeting = () => {
+//   console.log("Hello there!");
+// };
+
+// ########## functions with parameters ########## //
+
+function greetWithName(name) {
+  console.log("Hello " + name + "!");
 }
 
-const greeting = function () {
-  console.log("Hello there!");
-};
+function addTwoNumbers(num1, num2) {
+  const result = num1 + num2;
+  console.log(`The result is ${result}`);
+}
 
-const greeting = () => {
-  console.log("Hello there!");
-};
+function multiplyTwoNumbers(num1, num2) {
+  const result = num1 * num2;
+  console.log(`The result is ${result}`);
+}
+
+function giveMeTheNumber7() {
+  return 7;
+}
+
+const number = giveMeTheNumber7();
+
+// ########## functions with parameters and return value ########## //
+
+function divide(num1, num2) {
+  if (num2 === 0) {
+    console.log("You can't divide with 0");
+    return null;
+  }
+
+  const result = num1 / num2;
+  return result;
+}
+
+const result = divide(10, 2);
